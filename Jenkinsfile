@@ -37,4 +37,12 @@ pipeline {
       }
     }
   }
+  post {
+    always {
+        echo 'Finished.'
+    }
+    failure {
+        mail to: 'eslam.adel.me@gmail.com', subject: 'The Pipeline failed :(', body: 'Please refer to the logs ...'
+    }
+  }
 }
